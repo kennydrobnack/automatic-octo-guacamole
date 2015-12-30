@@ -15,6 +15,18 @@ class RomanNumeral
       case number
         when "I"
           return 1
+        when "V"
+          return 5
+        when "X"
+          return 10
+        when "L"
+          return 50
+        when "C"
+          return 100
+        when "D"
+          return 500
+        when "M"
+          return 1000
         else
           return 0
       end
