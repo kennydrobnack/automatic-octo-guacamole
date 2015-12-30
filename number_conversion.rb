@@ -5,7 +5,7 @@ require 'arabic_numeral'
 require 'roman_numeral'
 
 
-(1..2000).each do |i|
+(1..3999).each do |i|
   num = ArabicNumeral.new(i)
   rnum = RomanNumeral.new(num.to_roman_numeral)
   puts "Converting #{i} to roman numeral #{num.to_roman_numeral}"
