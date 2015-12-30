@@ -32,6 +32,12 @@ class ArabicNumeral
         return "IX"
       when 40..49
         return "XL" + to_roman_numeral(number - 40)
+      when 90..99
+        return "XC" + to_roman_numeral(number - 90)
+      when 400..499
+        return "CD" + to_roman_numeral(number - 400)
+      when 900..999
+        return "CM" + to_roman_numeral(number - 900)
       when 1001..1989 #Now break off the biggest numbers
         return to_roman_numeral(1000) + to_roman_numeral(number - 1000)
       when 500..899
