@@ -32,5 +32,10 @@ RSpec.describe RomanNumeral do
     expect(roman_1066.to_arabic_numeral).to eq(1066)
   end
 
+  it 'Converts MCMLXXXIX to 1989' do
+    roman_1989 = RomanNumeral.new("MCMLXXXIX")
+    expect(roman_1989.to_arabic_numeral).to eq(1989)
+  end
+
 
 end

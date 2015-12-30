@@ -27,15 +27,23 @@ class RomanNumeral
           return 500
         when "M"
           return 1000
-        else
-          return 0
       end
     #Two character combinations
-    elsif number.length == 2
+    elsif number.length >= 2
       last_two = number[-2..-1]
       case last_two
+        when "IV"
+          return 4 + to_arabic_numeral(number[0..-3])
         when "IX"
-          return 9
+          return 9 + to_arabic_numeral(number[0..-3])
+        when "XL"
+          return 40 + to_arabic_numeral(number[0..-3])
+        when "XC"
+          return 90 + to_arabic_numeral(number[0..-3])
+        when "CD"
+          return 400 + to_arabic_numeral(number[0..-3])
+        when "CM"
+          return 900 + to_arabic_numeral(number[0..-3])
       end
     end
     return to_arabic_numeral(number[-1]) + to_arabic_numeral(number[0..-2])
