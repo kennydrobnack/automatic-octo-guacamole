@@ -24,8 +24,9 @@ class ArabicNumeral
       when 100..399
         mult = (number/100).floor
         return "C" * mult + to_roman_numeral(number - 100 * mult)
-      when 1000
-        return "M"
+      when 1000..3999
+        mult = (number/1000).floor
+        return "M" * mult + to_roman_numeral(number - 1000 * mult)
       when 4 #Special cases for the minus ones
         return "IV"
       when 9
