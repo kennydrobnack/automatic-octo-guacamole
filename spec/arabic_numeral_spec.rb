@@ -15,4 +15,9 @@ RSpec.describe ArabicNumeral do
     arabic_one = ArabicNumeral.new(1)
     expect(arabic_one.to_roman_numeral).to eq("I")
   end
+
+  it 'Converts number 3 to III correctly' do
+    arabic_three = ArabicNumeral.new(3)
+    expect(arabic_three.to_roman_numeral).to eq("III")
+  end
 end
