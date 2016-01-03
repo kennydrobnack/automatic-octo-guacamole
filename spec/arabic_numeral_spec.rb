@@ -137,5 +137,61 @@ RSpec.describe ArabicNumeral do
     expect(arabic_number.to_roman_numeral).to eq("MCMLXXXIX")
   end
 
+	#Interesting edge cases
+	it 'to_roman_numeral converts 42 to XLII' do #Must include this somewhere :-)
+		arabic_number = ArabicNumeral.new(42)
+		expect(arabic_number.to_roman_numeral).to eq("XLII")
+	end	
+
+	it 'to_roman_numeral converts 49 to XLIX' do
+		arabic_number = ArabicNumeral.new(49)
+		expect(arabic_number.to_roman_numeral).to eq("XLIX")
+	end
+
+	it 'to_roman_numeral converts 88 to LXXXVIII' do #Most repeating characters under 100
+		arabic_number = ArabicNumeral.new(88)
+		expect(arabic_number.to_roman_numeral).to eq("LXXXVIII")
+	end
+
+	it 'to_roman_numeral converts 99 to XCIX' do
+		arabic_number = ArabicNumeral.new(99)
+		expect(arabic_number.to_roman_numeral).to eq("XCIX")
+	end
+
+	it 'to_roman_numeral converts 150 to CL' do
+		arabic_number = ArabicNumeral.new(150)
+		expect(arabic_number.to_roman_numeral).to eq("CL")
+	end
+
+	it 'to_roman_numeral converts 499 to CDXCIX' do
+		arabic_number = ArabicNumeral.new(499)
+		expect(arabic_number.to_roman_numeral).to eq("CDXCIX")
+	end
+
+	it 'to_roman_numeral converts 888 to DCCCVXXXVIII' do #Most repeating characters under 1000
+		arabic_number = ArabicNumeral.new(888)
+		expect(arabic_number.to_roman_numeral).to eq("DCCCLXXXVIII")
+	end
+
+	it 'to_roman_numeral converts 999 to CMXCIX' do 
+		arabic_number = ArabicNumeral.new(999)
+		expect(arabic_number.to_roman_numeral).to eq("CMXCIX")
+	end
+
+	it 'to_roman_numeral converts 1500 to MD' do
+		arabic_number = ArabicNumeral.new(1500)
+		expect(arabic_number.to_roman_numeral).to eq("MD")
+	end
+
+	it 'to_roman_numeral converts 3888 to MMMDCCCLXXXVIII' do #Most characters we can do with current character set
+		arabic_number = ArabicNumeral.new(3888)
+		expect(arabic_number.to_roman_numeral).to eq("MMMDCCCLXXXVIII")
+	end
+
+	it 'to_roman_numeral converts 3999 to MMMCMXCIX' do #Largest number we can handle with current set
+		arabic_number = ArabicNumeral.new(3999)
+		expect(arabic_number.to_roman_numeral).to eq("MMMCMXCIX")
+	end
+
 end
 
