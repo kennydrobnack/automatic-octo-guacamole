@@ -18,7 +18,48 @@ RSpec.describe ArabicNumeral do
     expect(bad_arabic_number.to_roman_numeral).to eq("Unknown number -1")
   end
 
+	it 'convert_zero returns empty string' do
+		arabic_number = ArabicNumeral.new(0)
+		expect(arabic_number.convert_zero).to eq("")
+	end	
+
   #Test single character Roman numerals
+  it 'single_character_conversion converts number 1 to I correctly' do
+    arabic_number = ArabicNumeral.new(1)
+    expect(arabic_number.single_character_conversion).to eq("I")
+  end
+
+  it 'single_character_conversion converts number 5 to V correctly' do
+    arabic_number = ArabicNumeral.new(5)
+    expect(arabic_number.single_character_conversion).to eq("V")
+  end
+
+  it 'single_character_conversion converts number 10 to X correctly' do
+    arabic_number = ArabicNumeral.new(10)
+    expect(arabic_number.single_character_conversion).to eq("X")
+  end
+
+  it 'single_character_conversion converts number 50 to L correctly' do
+    arabic_number = ArabicNumeral.new(50)
+    expect(arabic_number.single_character_conversion).to eq("L")
+  end
+
+  it 'single_character_conversion converts number 100 to C correctly' do
+    arabic_number = ArabicNumeral.new(100)
+    expect(arabic_number.single_character_conversion).to eq("C")
+  end
+
+  it 'single_character_conversion converts number 500 to D correctly' do
+    arabic_number = ArabicNumeral.new(500)
+    expect(arabic_number.single_character_conversion).to eq("D")
+  end
+
+  it 'single_character_conversion converts number 1000 to M correctly' do
+    arabic_number = ArabicNumeral.new(1000)
+    expect(arabic_number.single_character_conversion).to eq("M")
+  end
+
+
   it 'to_roman_numeral converts number 1 to I correctly' do
     arabic_number = ArabicNumeral.new(1)
     expect(arabic_number.to_roman_numeral).to eq("I")
