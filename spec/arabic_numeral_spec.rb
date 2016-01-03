@@ -86,19 +86,44 @@ RSpec.describe ArabicNumeral do
   end
 
   #Test repeating characters work correctly
-  it 'to_roman_numeral converts number 3 to III correctly' do
-    arabic_number = ArabicNumeral.new(3)
-    expect(arabic_number.to_roman_numeral).to eq("III")
+  it 'to_roman_numeral converts number 2 to II correctly' do
+    arabic_number = ArabicNumeral.new(2)
+    expect(arabic_number.to_roman_numeral).to eq("II")
   end
 
   it 'to_roman_numeral converts number 3 to III correctly' do
     arabic_number = ArabicNumeral.new(3)
     expect(arabic_number.to_roman_numeral).to eq("III")
   end
+
+	it 'to_roman_numeral converts 20 to XX correctly' do
+		arabic_number = ArabicNumeral.new(20)
+		expect(arabic_number.to_roman_numeral).to eq("XX")
+	end
 
   it 'to_roman_numeral converts number 30 to XXX correctly' do
     arabic_number = ArabicNumeral.new(30)
     expect(arabic_number.to_roman_numeral).to eq("XXX")
+  end
+
+	it 'to_roman_numeral converts 200 to CC correctly' do
+		arabic_number = ArabicNumeral.new(200)
+		expect(arabic_number.to_roman_numeral).to eq("CC")
+	end
+
+  it 'to_roman_numeral converts number 300 to CCC correctly' do
+    arabic_number = ArabicNumeral.new(300)
+    expect(arabic_number.to_roman_numeral).to eq("CCC")
+  end
+
+	it 'to_roman_numeral converts 2000 to MM correctly' do
+		arabic_number = ArabicNumeral.new(2000)
+		expect(arabic_number.to_roman_numeral).to eq("MM")
+	end
+
+  it 'to_roman_numeral converts number 3000 to MMM correctly' do
+    arabic_number = ArabicNumeral.new(3000)
+    expect(arabic_number.to_roman_numeral).to eq("MMM")
   end
 
   #Larger test cases from problem description
@@ -113,3 +138,4 @@ RSpec.describe ArabicNumeral do
   end
 
 end
+
