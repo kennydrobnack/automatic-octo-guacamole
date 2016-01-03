@@ -24,39 +24,39 @@ RSpec.describe ArabicNumeral do
 	end	
 
   #Test single character Roman numerals
-  it 'single_character_conversion converts number 1 to I correctly' do
+  it 'convert_ones converts number 1 to I correctly' do
     arabic_number = ArabicNumeral.new(1)
-    expect(arabic_number.single_character_conversion).to eq("I")
+    expect(arabic_number.convert_ones).to eq("I")
   end
 
-  it 'single_character_conversion converts number 5 to V correctly' do
+  it 'convert_five coverts number 5 to V correctly' do
     arabic_number = ArabicNumeral.new(5)
-    expect(arabic_number.single_character_conversion).to eq("V")
+    expect(arabic_number.convert_five).to eq("V")
   end
 
-  it 'single_character_conversion converts number 10 to X correctly' do
+  it 'convert_tens converts number 10 to X correctly' do
     arabic_number = ArabicNumeral.new(10)
-    expect(arabic_number.single_character_conversion).to eq("X")
+    expect(arabic_number.convert_tens).to eq("X")
   end
 
-  it 'single_character_conversion converts number 50 to L correctly' do
+  it 'convert_fifty converts number 50 to L correctly' do
     arabic_number = ArabicNumeral.new(50)
-    expect(arabic_number.single_character_conversion).to eq("L")
+    expect(arabic_number.convert_fifty).to eq("L")
   end
 
-  it 'single_character_conversion converts number 100 to C correctly' do
+  it 'convert_hundreds converts number 100 to C correctly' do
     arabic_number = ArabicNumeral.new(100)
-    expect(arabic_number.single_character_conversion).to eq("C")
+    expect(arabic_number.convert_hundreds).to eq("C")
   end
 
-  it 'single_character_conversion converts number 500 to D correctly' do
+  it 'convert_five_hundred converts number 500 to D correctly' do
     arabic_number = ArabicNumeral.new(500)
-    expect(arabic_number.single_character_conversion).to eq("D")
+    expect(arabic_number.convert_five_hundred).to eq("D")
   end
 
-  it 'single_character_conversion converts number 1000 to M correctly' do
+  it 'convert_thousands converts number 1000 to M correctly' do
     arabic_number = ArabicNumeral.new(1000)
-    expect(arabic_number.single_character_conversion).to eq("M")
+    expect(arabic_number.convert_thousands).to eq("M")
   end
 
 
