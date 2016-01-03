@@ -50,6 +50,7 @@ class ArabicNumeral
       when 5..8
         return to_roman_numeral(5) + to_roman_numeral(number - 5)
     end
+    #Error case - this way we known something is broke instead of letting it silently fail
     return "Unknown number #{number}"
   end
 
