@@ -10,6 +10,9 @@ class RomanNumeral
     if number.length < 1
       return 0
     end
+		if /[^IVXLCDM]/.match(number)
+			return "Invalid Roman Numeral #{number}"
+		end
     #Single char conversions first
     if number.length == 1
       case number
