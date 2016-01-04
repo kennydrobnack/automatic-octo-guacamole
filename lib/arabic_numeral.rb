@@ -3,6 +3,39 @@ class ArabicNumeral
     @number = number
   end
 
+	def convert_zero
+		return ""
+	end
+
+	def convert_five
+		return "V"
+	end
+
+	def convert_fifty
+		return "L"
+	end
+
+	def convert_five_hundred
+		return "D"
+	end 
+
+	def convert_ones(number)
+		return "I" * number
+	end
+
+	def convert_tens(number)
+		return "X" * (number/10).floor
+	end
+
+	def convert_hundreds(number)
+		return "C" * (number/100).floor
+	end
+
+	def convert_thousands(number)
+		return "M" * (number/1000).floor
+	end 
+		
+
   def to_roman_numeral(number = nil)
     if number.nil?
       number = @number
@@ -11,22 +44,22 @@ class ArabicNumeral
       when 0 #Handle weird cases where we get to 0 - that means previous steps have done all conversions
         return ""
       when 5 #The "5" symbols first. They cannot be repeated or subtracted
-        return "V"
+        return convert_five
       when 50
-        return "L"
+        return convert_fifty
       when 500
-        return "D"
+        return convert_five_hundred
       when 1..3 #Repeatable symbols
-        return "I" * number
+        return convert_ones(number)
       when 10..39
         mult = (number/10).floor
-        return "X" * mult + to_roman_numeral(number - 10 * mult)
+        return convert_tens(number) + to_roman_numeral(number - 10 * mult)
       when 100..399
         mult = (number/100).floor
-        return "C" * mult + to_roman_numeral(number - 100 * mult)
+        return convert_hundreds(number) + to_roman_numeral(number - 100 * mult)
       when 1000..3999
         mult = (number/1000).floor
-        return "M" * mult + to_roman_numeral(number - 1000 * mult)
+        return convert_thousands(number) + to_roman_numeral(number - 1000 * mult)
       when 4 #Special cases for the minus ones
         return "IV"
       when 9

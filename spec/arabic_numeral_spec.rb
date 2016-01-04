@@ -26,7 +26,7 @@ RSpec.describe ArabicNumeral do
   #Test single character Roman numerals
   it 'convert_ones converts number 1 to I correctly' do
     arabic_number = ArabicNumeral.new(1)
-    expect(arabic_number.convert_ones).to eq("I")
+    expect(arabic_number.convert_ones(1)).to eq("I")
   end
 
   it 'convert_five coverts number 5 to V correctly' do
@@ -36,7 +36,7 @@ RSpec.describe ArabicNumeral do
 
   it 'convert_tens converts number 10 to X correctly' do
     arabic_number = ArabicNumeral.new(10)
-    expect(arabic_number.convert_tens).to eq("X")
+    expect(arabic_number.convert_tens(10)).to eq("X")
   end
 
   it 'convert_fifty converts number 50 to L correctly' do
@@ -46,7 +46,7 @@ RSpec.describe ArabicNumeral do
 
   it 'convert_hundreds converts number 100 to C correctly' do
     arabic_number = ArabicNumeral.new(100)
-    expect(arabic_number.convert_hundreds).to eq("C")
+    expect(arabic_number.convert_hundreds(100)).to eq("C")
   end
 
   it 'convert_five_hundred converts number 500 to D correctly' do
@@ -56,7 +56,7 @@ RSpec.describe ArabicNumeral do
 
   it 'convert_thousands converts number 1000 to M correctly' do
     arabic_number = ArabicNumeral.new(1000)
-    expect(arabic_number.convert_thousands).to eq("M")
+    expect(arabic_number.convert_thousands(1000)).to eq("M")
   end
 
 
