@@ -14,6 +14,72 @@ require 'roman_numeral'
 RSpec.describe RomanNumeral do
 
 
+	#Test helper classes
+	it 'single_character_conversion converts I to 1' do
+		roman_number = RomanNumeral.new("I")
+		expect(roman_number.single_character_conversion("I")).to eq(1)
+	end
+
+	it 'single_character_conversion converts V to 5' do
+		roman_number = RomanNumeral.new("V")
+		expect(roman_number.single_character_conversion("V")).to eq(5)
+	end
+
+	it 'single_character_conversion converts X to 10' do
+		roman_number = RomanNumeral.new("X")
+		expect(roman_number.single_character_conversion("X")).to eq(10)
+	end
+
+	it 'single_character_conversion converts L to 50' do
+		roman_number = RomanNumeral.new("L")
+		expect(roman_number.single_character_conversion("L")).to eq(50)
+	end
+
+	it 'single_character_conversion converts C to 100' do
+		roman_number = RomanNumeral.new("C")
+		expect(roman_number.single_character_conversion("C")).to eq(100)
+	end
+
+	it 'single_character_conversion converts D to 500' do
+		roman_number = RomanNumeral.new("D")
+		expect(roman_number.single_character_conversion("D")).to eq(500)
+	end
+
+	it 'single_character_conversion converts M to 1000' do
+		roman_number = RomanNumeral.new("M")
+		expect(roman_number.single_character_conversion("M")).to eq(1000)
+	end
+
+	it 'two_character_conversion converts IV to 4' do
+		roman_number = RomanNumeral.new("IV")
+		expect(roman_number.two_character_conversion("IV")).to eq(4)
+	end
+
+	it 'two_character_conversion converts IX to 9' do
+		roman_number = RomanNumeral.new("IX")
+		expect(roman_number.two_character_conversion("IX")).to eq(9)
+	end
+
+	it 'two_character_conversion converts XL to 40' do
+		roman_number = RomanNumeral.new("XL")
+		expect(roman_number.two_character_conversion("XL")).to eq(40)
+	end
+
+	it 'two_character_conversion converts XC to 90' do
+		roman_number = RomanNumeral.new("XC")
+		expect(roman_number.two_character_conversion("XC")).to eq(90)
+	end
+
+	it 'two_character_conversion converts CD to 400' do
+		roman_number = RomanNumeral.new("CD")
+		expect(roman_number.two_character_conversion("CD")).to eq(400)
+	end
+
+	it 'two_character_conversion converts CM to 900' do
+		roman_number = RomanNumeral.new("CM")
+		expect(roman_number.two_character_conversion("CM")).to eq(900)
+	end
+
   #Test error case
   it 'to_arabic_numeral errors out on unknown numbers' do
     bad_roman_number = RomanNumeral.new("FOO")
