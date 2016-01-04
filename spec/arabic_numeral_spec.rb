@@ -126,6 +126,37 @@ RSpec.describe ArabicNumeral do
     expect(arabic_number.to_roman_numeral).to eq("CM")
   end
 
+
+  it 'convert_four converts 4 to IV correctly' do
+    arabic_number = ArabicNumeral.new(4)
+    expect(arabic_number.convert_four).to eq("IV")
+  end
+
+  it 'convert_nine converts 9 to IX correctly' do
+    arabic_number = ArabicNumeral.new(9)
+    expect(arabic_number.convert_nine).to eq("IX")
+  end
+
+  it 'convert_forty converts 40 to XL correctly' do
+    arabic_number = ArabicNumeral.new(40)
+    expect(arabic_number.convert_forty).to eq("XL")
+  end
+
+  it 'convert_ninety converts 90 to XC correctly' do
+    arabic_number = ArabicNumeral.new(90)
+    expect(arabic_number.convert_ninety).to eq("XC")
+  end
+
+  it 'convert_four_hundred converts 400 to CD correctly' do
+    arabic_number = ArabicNumeral.new(400)
+    expect(arabic_number.convert_four_hundred).to eq("CD")
+  end
+
+  it 'convert_nine_hundred converts 900 to CM correctly' do
+    arabic_number = ArabicNumeral.new(900)
+    expect(arabic_number.convert_nine_hundred).to eq("CM")
+  end
+
   #Test repeating characters work correctly
   it 'to_roman_numeral converts number 2 to II correctly' do
     arabic_number = ArabicNumeral.new(2)

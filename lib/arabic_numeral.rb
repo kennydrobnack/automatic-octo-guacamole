@@ -34,7 +34,30 @@ class ArabicNumeral
 	def convert_thousands(number)
 		return "M" * (number/1000).floor
 	end 
-		
+
+	def convert_four
+		return "IV"
+	end
+
+	def convert_nine
+		return "IX"
+	end
+
+	def convert_forty
+		return "XL"
+	end
+
+	def convert_ninety
+		return "XC"
+	end
+
+	def convert_four_hundred
+		return "CD"
+	end
+
+	def convert_nine_hundred
+		return "CM"
+	end		
 
   def to_roman_numeral(number = nil)
     if number.nil?
